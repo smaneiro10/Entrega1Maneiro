@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+
+<h2>Lista de Clubes</h2>
+<a class="card_custom" href="{% url 'clubes-add' %}">Crear nuevo Club</a>
+<hr></hr>
+<ul>
+    {% for clubes in club %}
+    <li>
+        {{clubes}}
+        (
+        <a href="{% url 'jugadores-detail' clubes.id %}">
+            <i class="fa fa-eye" style="color: rgb(0, 0, 255);"> </i>
+        </a>
+        |
+        <a href="{% url 'jugadores-update' clubes.id %}">
+            <i class="fa fa-pencil" style="color: rgb(0, 0, 190);"> </i>
+        </a>
+        |
+        <a href="{% url 'jugadores-delete' clubes.id %}">
+            <i class="fa fa-trash" style="color: rgb(0, 0, 100);"> </i>
+        </a>
+        )
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

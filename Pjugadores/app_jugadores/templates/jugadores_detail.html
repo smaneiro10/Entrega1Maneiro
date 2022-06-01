@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+
+<h2>Detalle del Jugador</h2>
+<hr></hr>
+<p><h3>Jugador: {{ jugador.nombre }}</h3></p>
+<p><h4>Equipo: {{ jugador.equipo }}</h4></p>
+<p><a class="btn2 btn-primary" href="{% url 'jugadores-list' %}">Regresar a la lista de jugadores</a></p>
+
+{% endblock %}

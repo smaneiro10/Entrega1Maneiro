@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+
+<h2>Lista de Ligas</h2>
+<a class="card_custom" href="{% url 'ligas-add' %}">Crear nueva Liga</a>
+<hr></hr>
+<ul>
+    {% for ligas in liga %}
+    <li>
+        {{ligas}}
+        (
+        <a href="{% url 'jugadores-detail' ligas.id %}">
+            <i class="fa fa-eye" style="color: rgb(0, 0, 255);"> </i>
+        </a>
+        |
+        <a href="{% url 'jugadores-update' ligas.id %}">
+            <i class="fa fa-pencil" style="color: rgb(0, 0, 190);"> </i>
+        </a>
+        |
+        <a href="{% url 'jugadores-delete' ligas.id %}">
+            <i class="fa fa-trash" style="color: rgb(0, 0, 100);"> </i>
+        </a>
+        )
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
