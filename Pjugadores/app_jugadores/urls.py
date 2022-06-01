@@ -61,7 +61,7 @@ urlpatterns = [
     path('clubes/<int:pk>/update', views.ClubUpdateView.as_view(), name='clubes-update'),
     path('clubes/<int:pk>/delete', views.ClubDeleteView.as_view(), name='clubes-delete'),
 
-    path('ligas', views.LigaListView.as_view(), name='ligas-list'),
+    path('liga', views.LigaListView.as_view(), name='ligas-list'),
     path('ligas/add/', views.LigaCreateView.as_view(), name='ligas-add'),
     path('ligas/<int:pk>/detail', views.LigaDetailView.as_view(), name='ligas-detail'),
     path('ligas/<int:pk>/update', views.LigaUpdateView.as_view(), name='ligas-update'),

@@ -349,6 +349,7 @@ class JugadoresUpdateView(UpdateView):
 
 class JugadoresDeleteView(DeleteView):
     model = Jugadores
+    template_name = "jugadores_confirm_delete.html"
     # success_url = "/app_jugadores/courses"
     success_url = reverse_lazy('jugadores-list')
 
@@ -382,6 +383,7 @@ class ClubUpdateView(UpdateView):
 
 class ClubDeleteView(DeleteView):
     model = Club
+    template_name = "clubes_confirm_delete.html"
     # success_url = "/app_jugadores/courses"
     success_url = reverse_lazy('clubes-list')
 
@@ -415,5 +417,6 @@ class LigaUpdateView(UpdateView):
 
 class LigaDeleteView(DeleteView):
     model = Liga
+    template_name = "ligas_confirm_delete.html"
     # success_url = "/app_jugadores/courses"
     success_url = reverse_lazy('ligas-list')

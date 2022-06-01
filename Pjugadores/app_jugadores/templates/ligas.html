@@ -10,15 +10,15 @@
     <li>
         {{ligas}}
         (
-        <a href="{% url 'jugadores-detail' ligas.id %}">
+        <a href="{% url 'ligas-detail' ligas.id %}">
             <i class="fa fa-eye" style="color: rgb(0, 0, 255);"> </i>
         </a>
         |
-        <a href="{% url 'jugadores-update' ligas.id %}">
+        <a href="{% url 'ligas-update' ligas.id %}">
             <i class="fa fa-pencil" style="color: rgb(0, 0, 190);"> </i>
         </a>
         |
-        <a href="{% url 'jugadores-delete' ligas.id %}">
+        <a href="{% url 'ligas-delete' ligas.id %}">
             <i class="fa fa-trash" style="color: rgb(0, 0, 100);"> </i>
         </a>
         )
