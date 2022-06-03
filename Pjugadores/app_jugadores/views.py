@@ -288,22 +288,22 @@ def liga_forms_django(request):
 
 def search(request):
     context_dict = dict()
-    if request.GET['jugador_search']:
-        search_param = request.GET['jugador_search']
-        jugadores = Jugadores.objects.filter(jugador__contains=search_param)
+    if request.GET['jug_search']:
+        search_param = request.GET['jug_search']
+        jugadores = Jugadores.objects.filter(nombre__contains=search_param)
         context_dict = {
             'jugadores': jugadores
         }
-    elif request.GET['club_search']:
-        search_param = request.GET['club_search']
-        clubes = Club.objects.filter(club__contains=search_param)
+    elif request.GET['equi_search']:
+        search_param = request.GET['equi_search']
+        equipos = Jugadores.objects.filter(equipo__contains=search_param)
         context_dict = {
-            'clubes': clubes
+            'equipos': equipos
         }
     elif request.GET['all_search']:
         search_param = request.GET['all_search']
-        query = Q(jugador__contains=search_param)
-        query.add(Q(club__contains=search_param), Q.OR)
+        query = Q(nombre__contains=search_param)
+        query.add(Q(equipo__contains=search_param), Q.OR)
         jugadores = Jugadores.objects.filter(query)
         context_dict = {
             'jugadores': jugadores

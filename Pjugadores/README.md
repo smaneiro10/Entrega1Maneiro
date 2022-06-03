@@ -2,7 +2,9 @@
 
 - Clonar el proyecto y cambiar de rama
 ```bash
-git clone https://github.com/smaneiro10/Entrega1Maneiro/Pjugadores.git
+git clone https://github.com/smaneiro10/Entrega1Maneiro.git
+
+cd Entrega1Maneiro
 
 cd Pjugadores
 

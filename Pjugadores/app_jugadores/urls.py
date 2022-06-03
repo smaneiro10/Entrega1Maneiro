@@ -24,7 +24,7 @@ urlpatterns = [
     path('jugadores', views.jugadores, name='Jugadores'),
     # path('courses', views.courses, name='jugadores-list'),
     path('clubes', views.club, name='Club'),
-    path('liga', views.liga, name='Liga'),
+    path('ligas', views.liga, name='Liga'),
     path('formHTML', views.form_hmtl),
     # path('jugadores-django-forms', views.course_forms_django, name='CourseDjangoForms'),
     # path('profesor-django-forms', views.profesor_forms_django, name='ProfesorDjangoForms'),
@@ -54,6 +54,7 @@ urlpatterns = [
     path('jugadores/<int:pk>/detail', views.JugadoresDetailView.as_view(), name='jugadores-detail'),
     path('jugadores/<int:pk>/update', views.JugadoresUpdateView.as_view(), name='jugadores-update'),
     path('jugadores/<int:pk>/delete', views.JugadoresDeleteView.as_view(), name='jugadores-delete'),
+    path('search', views.search, name='Search'),
 
     path('clubes', views.ClubListView.as_view(), name='clubes-list'),
     path('clubes/add/', views.ClubCreateView.as_view(), name='clubes-add'),
@@ -61,7 +62,7 @@ urlpatterns = [
     path('clubes/<int:pk>/update', views.ClubUpdateView.as_view(), name='clubes-update'),
     path('clubes/<int:pk>/delete', views.ClubDeleteView.as_view(), name='clubes-delete'),
 
-    path('liga', views.LigaListView.as_view(), name='ligas-list'),
+    path('ligas', views.LigaListView.as_view(), name='ligas-list'),
     path('ligas/add/', views.LigaCreateView.as_view(), name='ligas-add'),
     path('ligas/<int:pk>/detail', views.LigaDetailView.as_view(), name='ligas-detail'),
     path('ligas/<int:pk>/update', views.LigaUpdateView.as_view(), name='ligas-update'),

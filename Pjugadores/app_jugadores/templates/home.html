@@ -7,15 +7,15 @@
 
 <form action="/search" method="GET">
     <div>
-        <input type="text" name="text_search" id="course_name" placeholder="Busqueda por nombre">
+        <input type="text" name="jug_search" id="jugador_nombre" placeholder="Busqueda por nombre">
         <input type="submit" value="Buscar por Nombre">
     </div>
     <div>
-        <input type="number" name="code_search" id="course_code" placeholder="Busqueda por club">
-        <input type="submit" value="Buscar por club">
+        <input type="text" name="equi_search" id="jugador_equipo" placeholder="Busqueda por equipo">
+        <input type="submit" value="Buscar por equipo">
     </div>
     <div>
-        <input type="text" name="all_search" id="course_code_or_name" placeholder="Busqueda general">
+        <input type="text" name="all_search" id="jugador_equipo_o_nombre" placeholder="Busqueda general">
         <input type="submit" value="Buscar">
     </div>
 
@@ -23,12 +23,12 @@
 
 <hr></hr>
 
-{% if courses %}
+{% if jugadores %}
     <ul>
-        {% for course in courses %}
+        {% for jugador in jugadores %}
             <li>
-                Curso: {{course.name}}
-                -- Camada: {{course.code}}
+                Jugador: {{jugador.nombre}}
+                -- Equipo: {{jugador.equipo}}
             </li>
         {% endfor %}
     </ul>

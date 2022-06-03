@@ -55,7 +55,7 @@ ROOT_URLCONF = 'Pjugadores.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Pjugadores/app_jugadores/templates'],
+        'DIRS': ['C:/Users/Santi/Entrega1Maneiro/Pjugadores/app_jugadores/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
