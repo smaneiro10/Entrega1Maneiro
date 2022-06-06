@@ -4,7 +4,10 @@ from django.forms.models import model_to_dict
 
 from app_jugadores.models import *
 from app_jugadores.forms import *
-
+from django.urls import reverse_lazy
+from django.views.generic import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 def index(request):
     return render(request, "home.html")
@@ -288,17 +291,17 @@ def liga_forms_django(request):
 
 def search(request):
     context_dict = dict()
-    if request.GET['jug_search']:
-        search_param = request.GET['jug_search']
+    if request.GET['text_search']:
+        search_param = request.GET['text_search']
         jugadores = Jugadores.objects.filter(nombre__contains=search_param)
         context_dict = {
             'jugadores': jugadores
         }
     elif request.GET['equi_search']:
         search_param = request.GET['equi_search']
-        equipos = Jugadores.objects.filter(equipo__contains=search_param)
+        jugadores = Jugadores.objects.filter(equipo__contains=search_param)
         context_dict = {
-            'equipos': equipos
+            'jugadores': jugadores
         }
     elif request.GET['all_search']:
         search_param = request.GET['all_search']
@@ -312,13 +315,8 @@ def search(request):
     return render(
         request=request,
         context=context_dict,
-        template_name="app_jugadores/home.html",
+        template_name="C:/Users/Santi/Entrega1Maneiro/Pjugadores/app_jugadores/templates/home.html",
     )
-
-from django.urls import reverse_lazy
-from django.views.generic import ListView
-from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
 class JugadoresListView(ListView):
